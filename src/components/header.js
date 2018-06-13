@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
+
 const Header = ({ siteTitle }) => (
   <nav className="navbar is-transparent">
     <div className="navbar-brand">

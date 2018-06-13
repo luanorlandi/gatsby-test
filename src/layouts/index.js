@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
-import '../js/i18n';
+import i18n from '../js/i18n';
 import Header from '../components/header';
+import LanguageSwitcher from '../components/LanguageSwitcher';
 import './index.scss';
 
 const Layout = ({ children, data }) => (
@@ -16,6 +17,7 @@ const Layout = ({ children, data }) => (
       ]}
     />
     <Header siteTitle={data.site.siteMetadata.title} />
+    <LanguageSwitcher i18n={ i18n }/>
     <div>
       {children()}
     </div>

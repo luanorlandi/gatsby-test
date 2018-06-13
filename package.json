@@ -5,6 +5,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "bulma": "^0.7.1",
+    "classnames": "^2.2.6",
     "gatsby": "^1.9.247",
     "gatsby-link": "^1.6.40",
     "gatsby-plugin-react-helmet": "^2.0.10",
@@ -13,15 +14,16 @@
     "i18next-browser-languagedetector": "^2.2.0",
     "i18next-xhr-backend": "^1.5.1",
     "react-helmet": "^5.2.0",
-    "react-i18next": "^7.7.0"
+    "react-i18next": "^7.7.0",
+    "react-redux": "^5.0.7"
   },
   "keywords": [
     "gatsby"
   ],
   "license": "MIT",
   "scripts": {
+    "start": "gatsby develop",
     "build": "gatsby build",
-    "develop": "gatsby develop",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {

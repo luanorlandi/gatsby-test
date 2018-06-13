@@ -8,6 +8,10 @@ i18n
   .use(LanguageDetector)
   .use(reactI18nextModule)
   .init({
+    backend: {
+      loadPath: '/localization/{{lng}}/{{ns}}.json',
+    },
+
     fallbackLng: "en",
 
     // have a common namespace used around the full app
