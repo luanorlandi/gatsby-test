@@ -9,7 +9,7 @@ i18n
   .use(reactI18nextModule)
   .init({
     backend: {
-      loadPath: '/localization/{{lng}}/{{ns}}.json',
+      loadPath: './locales/{{lng}}/{{ns}}.json',
     },
 
     fallbackLng: "en",
@@ -18,7 +18,7 @@ i18n
     ns: ["translations"],
     defaultNS: "translations",
 
-    debug: true,
+    debug: false,
 
     interpolation: {
       escapeValue: false, // not needed for react!!
