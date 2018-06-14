@@ -1,54 +1,55 @@
-import React, { Component } from "react";
-import classNames from "classnames";
-import { translate } from "react-i18next";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { translate } from 'react-i18next';
 
 class LanguageSwitcher extends Component {
+  static propTypes = {
+    i18n: PropTypes.object,
+    t: PropTypes.func,
+  }
+
   constructor(props) {
     super(props);
     const { i18n } = this.props;
     this.state = { language: i18n.language };
-
-    this.handleChangeLanguage = this.handleChangeLanguage.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps = (nextProps) => {
     this.setState({ language: nextProps.i18n.language });
   }
 
-  handleChangeLanguage(lng) {
+  handleChangeLanguage = (lng) => {
     const { i18n } = this.props;
     i18n.changeLanguage(lng);
   }
 
-  renderLanguageChoice({ code, label }) {
-    const buttonClass = classNames("LanguageSwitcher__button", {
-      "LanguageSwitcher__button--selected": this.state.language === code,
-    });
-
-    return (
-      <button
+  renderLanguageChoice = ({ code, label }) =>
+    (
+      <a
         key={code}
-        className={buttonClass}
+        className="navbar-item is-uppercase"
         onClick={() => this.handleChangeLanguage(code)}
       >
         {label}
-      </button>
+      </a>
     );
-  }
 
   render() {
     const { t } = this.props;
     const languages = [
-      { code: "en", label: t('enUS') },
-      { code: "pt", label: t('ptBR') },
+      { code: 'en', label: t('en') },
+      { code: 'pt', label: t('pt') },
     ];
 
     return (
-      <div className="LanguageSwitcher">
-        {languages.map(language => this.renderLanguageChoice(language))}
+      <div className="navbar-item has-dropdown is-hoverable">
+        <div className="navbar-link is-uppercase">{t(this.state.language)}</div>
+        <div className="navbar-dropdown is-boxed">
+          {languages.map(language => this.renderLanguageChoice(language))}
+        </div>
       </div>
     );
   }
 }
 
-export default translate("LanguageSwitcher")(LanguageSwitcher);
+export default translate('LanguageSwitcher')(LanguageSwitcher);
