@@ -10,9 +10,9 @@ i18n
   .init({
     backend: {
       // path related to build directory in public
-      loadPath: './locales/{{lng}}/{{ns}}.json',
+      loadPath: '/locales/{{lng}}/{{ns}}.json',
     },
-    fallbackLng: 'en',
+    fallbackLng: 'en-US',
     ns: ['translations'],
     defaultNS: 'translations',
     debug: false,

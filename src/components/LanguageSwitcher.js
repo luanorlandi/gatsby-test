@@ -37,8 +37,8 @@ class LanguageSwitcher extends Component {
   render() {
     const { t } = this.props;
     const languages = [
-      { code: 'en', label: t('en') },
-      { code: 'pt', label: t('pt') },
+      { code: 'en-US', label: t('en-US') },
+      { code: 'pt-BR', label: t('pt-BR') },
     ];
 
     return (
