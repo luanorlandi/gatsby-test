@@ -2,7 +2,6 @@
   "name": "gatsby-starter-default-i18n",
   "description": "Gatsby default starter",
   "version": "1.0.0",
-  "author": "angeloocana.com",
   "dependencies": {
     "bulma": "^0.7.1",
     "gatsby": "^1.9.63",
@@ -22,7 +21,6 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "test": "jest",
     "coverage": "codecov"

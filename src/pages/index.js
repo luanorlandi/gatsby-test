@@ -1,10 +1,11 @@
 import React from 'react';
-import { FormattedMessage as Text } from 'react-intl';
+import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
+import { injectIntl, FormattedMessage as Text } from 'react-intl';
 
 import heroImage from '../assets/canoe_water_nature.jpg';
 
-const IndexPage = () => (
+const IndexPage = ({ intl }) => (
   <section className="hero">
     <div className="hero-body">
       <div className="container">
@@ -20,7 +21,7 @@ const IndexPage = () => (
         </div>
         <Link
           className="button"
-          to="contact"
+          to={`/${intl.locale}/contact/`}
         >
           <Text id="contact" />
         </Link>
@@ -29,4 +30,8 @@ const IndexPage = () => (
   </section>
 );
 
-export default IndexPage;
+IndexPage.propTypes = {
+  intl: PropTypes.object.isRequired,
+};
+
+export default injectIntl(IndexPage);
