@@ -1,2 +1,0 @@
-webpackJsonp([60335399758886],{153:function(t,a){t.exports={data:{site:{siteMetadata:{title:"Gatsby Default Starter",languages:{defaultLangKey:"en",langs:["en","pt"]}}}},layoutContext:{}}}});
-//# sourceMappingURL=path----34c8ea2e21f22c8eaf27.js.map
