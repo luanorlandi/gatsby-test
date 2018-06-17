@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
-import { translate } from 'react-i18next';
+import { FormattedMessage as Text } from 'react-intl';
 
-import i18n from '../js/i18n';
-import LanguageSwitcher from '../components/LanguageSwitcher';
+import LanguageSwitcher from './LanguageSwitcher';
 
-const Header = ({ siteTitle, t }) => (
+const Header = ({ siteTitle, langs }) => (
   <nav className="navbar has-shadow is-spaced">
     <div className="navbar-brand">
-      <Link className="navbar-item" to="/">{siteTitle}</Link>
+      <Link className="navbar-item" to="./">{siteTitle}</Link>
       <div className="navbar-burger burger" data-target="navbarExampleTransparentExample">
         <span />
         <span />
@@ -19,9 +18,9 @@ const Header = ({ siteTitle, t }) => (
 
     <div className="navbar-menu">
       <div className="navbar-end">
-        <Link className="navbar-item" to="/">{t('home')}</Link>
-        <Link className="navbar-item" to="/contact">{t('contact')}</Link>
-        <LanguageSwitcher i18n={i18n} />
+        <Link className="navbar-item" to="./"><Text id="home" /></Link>
+        <Link className="navbar-item" to="contact"><Text id="contact" /></Link>
+        <LanguageSwitcher langs={langs} />
       </div>
     </div>
   </nav>
@@ -29,7 +28,7 @@ const Header = ({ siteTitle, t }) => (
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-  t: PropTypes.func,
+  langs: PropTypes.array,
 };
 
-export default translate('Header')(Header);
+export default Header;
